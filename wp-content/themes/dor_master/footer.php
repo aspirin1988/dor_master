@@ -1,28 +1,71 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package dor_master
- */
+<!--НАЧАЛО контакты/футер-->
+<footer id="footer">
 
+	<!--НАЧАЛО картя яндекса-->
+	<?=get_field('map',4) ?>
+	<!--КОНЕЦ картя яндекса-->
+
+	<div class="text-section-container">
+		<div class="text-section">
+			<h2>КОНТАКТЫ</h2>
+			<p class="address">Адрес: <?=get_field('address',4)?></p>
+			<p class="phone-numbers">Телефон: <a href="tel:<?=get_field('phone-1',4)?>"><?=get_field('phone-1',4)?></a></p>
+			<p class="email">E-mail: <a href="mailto:<?=get_field('email',4)?>"><?=get_field('email',4)?></a></p>
+		</div>
+	</div>
+
+</footer>
+<!--КОНЕЦ контакты/футер-->
+
+<!--НАЧАЛО модальное окно статьи-->
+<?php $args=array('category_name'=>'services','order'=>'ASC', 'orderby'=>'id', 'numberposts'=>-1 );
+$posts=get_posts($args);
+foreach ($posts as $key=> $post):
+setup_postdata($post);
 ?>
+<div id="modal-article-services-<?=$key?>" data-uk-modal="{center:true}" class="uk-modal">
+	<div class="uk-modal-dialog uk-modal-dialog-large uk-clearfix">
+		<a class="uk-modal-close uk-close"></a>
+		<h2><?=strip_tags(get_the_title())?></h2>
+		<img src="<?=get_the_post_thumbnail_url()?>" class="float-right-img">
+		<?=get_the_content()?>
+	</div>
+</div>
+<?php endforeach; wp_reset_query(); ?>
 
-	</div><!-- #content -->
+<?php $post=get_post(39); setup_postdata($post);?>
+<div id="modal-article-retro" data-uk-modal="{center:true}" class="uk-modal">
+	<div class="uk-modal-dialog uk-modal-dialog-large uk-clearfix">
+		<a class="uk-modal-close uk-close"></a>
+		<h2><?=strip_tags(get_the_title())?></h2>
+		<img src="<?=get_the_post_thumbnail_url()?>" class="float-right-img">
+		<?=get_the_content()?>
+	</div>
+</div>
+<?php wp_reset_query(); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dor_master' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'dor_master' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'dor_master' ), 'dor_master', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<?php $post=get_post(42); setup_postdata($post);?>
+<div id="modal-article-pneuma" data-uk-modal="{center:true}" class="uk-modal">
+	<div class="uk-modal-dialog uk-modal-dialog-large uk-clearfix">
+		<a class="uk-modal-close uk-close"></a>
+		<h2><?=strip_tags(get_the_title())?></h2>
+		<img src="<?=get_the_post_thumbnail_url()?>" class="float-right-img">
+		<?=get_the_content()?>
+	</div>
+</div>
+<?php wp_reset_query(); ?>
 
-<?php wp_footer(); ?>
+</div>
+<!--КОНЕЦ модальное окно статьи-->
 
+
+<script src="<?php bloginfo('template_directory') ?>/public/js/jquery-2.2.3.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/uikit.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/sticky.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/slider.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/slideshow.min.js"></script>
+<?=get_field('google',4)?>
+<?=get_field('yandex',4)?>
+<?php wp_footer() ?>
 </body>
 </html>

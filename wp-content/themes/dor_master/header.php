@@ -1,50 +1,58 @@
-<?php
-/**
- * The header for our theme.
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package dor_master
- */
-
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<?php wp_head(); ?>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php wp_head() ?>
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/uikit.min.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/sticky.min.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slider.min.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slideshow.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slidenav.min.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/styles.css">
 </head>
+<body>
+<!--НАЧАЛО main section-->
+<header id="home">
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-medium-1-2">
+				<a class="logo">
+					<span class="text-yellow"><?=get_field('logo-1',4)?></span> <br>
+					<span class="company-name"><?=get_field('logo-2',4)?></span> <br>
+					<span class="text-yellow"><?=get_field('logo-3',4)?></span>
+				</a>
+			</div>
+			<div class="uk-width-medium-1-2 phone-numbers">
+				<p>
+					<?=get_field('phone-text',4)?> <br>
+					<a class="text-yellow" href="tel:<?=get_field('phone-1',4)?>"><?=get_field('phone-1',4)?></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</header>
+<!--КОНЕЦ main section-->
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'dor_master' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dor_master' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+<nav class="uk-navbar" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}">
+	<div class="uk-container uk-container-center">
+		<ul class="uk-navbar-nav uk-hidden-small uk-navbar-attached" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
+			<?php $menu=wp_get_nav_menu_items('main');
+			foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent):?>
+				<li><a href="<?=$val->url?>" <?php if ($val->object!='page'): ?> data-uk-smooth-scroll="<?php if ($key!=0||$key!==count($menu)-1) echo "{offset: 70}"?>" <?php endif; ?>"><?=$val->title?></a></li>
+			<?php endif; } ?>
+		</ul>
+		<a href="#sidebar-menu" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas="{target:'#sidebar-menu'}"></a>
+	</div>
+</nav>
+<div id="sidebar-menu" class="uk-offcanvas">
+	<div class="uk-offcanvas-bar">
+		<ul class="uk-nav uk-nav-offcanvas" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}" data-uk-nav>
+			<?php $menu=wp_get_nav_menu_items('main');
+			foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent):?>
+				<li><a href="<?=$val->url?>" <?php if ($val->object!='page'): ?> data-uk-smooth-scroll="<?php if ($key!=0||$key!==count($menu)-1) echo "{offset: 70}"?>" <?php endif; ?>"><?=$val->title?></a></li>
+			<?php endif; } ?>
+		</ul>
+	</div>
+</div>

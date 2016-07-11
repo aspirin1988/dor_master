@@ -118,28 +118,28 @@ header {
   height: auto; }
 
 /*НАЧАЛО модальное окно*/
-#modal-article {
+.uk-modal {
   text-align: justify; }
-  #modal-article .uk-modal-dialog {
+  .uk-modal .uk-modal-dialog {
     background: rgba(255, 255, 255, 0.85);
     color: #191919; }
-    #modal-article .uk-modal-dialog h2 {
+    .uk-modal .uk-modal-dialog h2 {
       color: #191919;
       text-align: center; }
-    #modal-article .uk-modal-dialog p {
+    .uk-modal .uk-modal-dialog p {
       text-indent: 20px; }
-    #modal-article .uk-modal-dialog img {
+    .uk-modal .uk-modal-dialog img {
       border: 3px solid #268131;
       margin-bottom: 5px;
       width: 100%; }
       @media (min-width: 767px) {
-        #modal-article .uk-modal-dialog img {
+        .uk-modal .uk-modal-dialog img {
           width: auto;
           max-width: 400px; } }
-    #modal-article .uk-modal-dialog img.float-right-img {
+    .uk-modal .uk-modal-dialog img.float-right-img {
       float: right;
       margin-left: 15px; }
-    #modal-article .uk-modal-dialog img.float-left-img {
+    .uk-modal .uk-modal-dialog img.float-left-img {
       float: left;
       margin-right: 15px; }
 
