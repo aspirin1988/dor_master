@@ -1,0 +1,464 @@
+/* НАЧАЛО ОБЩИЕ СТИЛИ */
+
+// подключаем шрифт Poplar Std:
+@font-face {
+  font-family: 'Poplar Std';
+  src: url('../fonts/poplar_std/Poplar-Std-Black.ttf') format('truetype');
+  font-weight: normal;
+}
+// подключаем шрифт Agora sans (non-bold):
+@font-face {
+  font-family: 'Agora sans';
+  src: url('../fonts/agora_sans/PFAgoraSansPro-Medium.ttf') format('truetype');
+  font-weight: normal;
+}
+// подключаем шрифт Agora sans (bold):
+@font-face {
+  font-family: 'Agora sans';
+  src: url('../fonts/agora_sans/PFAgoraSansPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+//НАЧАЛО объявляем переменные SASS
+$color-light: #f6d80d; //жёлтый
+$color-dark: #268131; //зеленый
+//КОНЕЦ объявляем переменные SASS
+
+body {
+  color: white;
+  font-family: "Agora sans", Helvetica, Arial, sans-serif;
+  line-height: 1.2;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.text-yellow {
+  color: $color-light; //жёлтый
+}
+.uk-slidenav {
+  color: $color-dark;
+  display: inline-block !important;
+  &:hover,
+  &:active {
+    color: $color-dark;
+  }
+  &.uk-slidenav-next {
+    text-shadow: -1px 0 white;
+  }
+  &.uk-slidenav-previous {
+    text-shadow: 1px 0 white;
+  }
+}
+
+/* КОНЕЦ ОБЩИЕ СТИЛИ */
+
+header {
+  background: $color-dark;
+  font-size: 20px;
+  padding: 10px 0 30px;
+  text-align: center;
+  @media screen and (min-width: 768px){
+    font-size: 24px;
+    text-align: left;
+  }
+
+  a.logo {
+    display: block;
+    font-weight: bold;
+    .company-name {
+      line-height: 1;
+      font-size: 60px;
+      font-family: "Poplar Std", Arial, sans-serif;
+      @media screen and (min-width: 480px){
+        font-size: 80px;
+      }
+    }
+    span:last-child {
+      margin-top: -5px;
+      display: block;
+      font-size: 20px;
+    }
+  }
+
+
+  .phone-numbers {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+    @media screen and (min-width: 768px){
+      text-align: right;
+      margin-top: 0;
+    }
+    a {
+      font-size: 28px;
+      font-weight: bold;
+      position: relative;
+      @media screen and (min-width: 480px){
+        font-size: 32px;
+      }
+      @media screen and (min-width: 768px){
+        &::before {
+          content: url("../img/icon_cellphone.png");
+          display: inline-block;
+          position: absolute;
+          top: -15px;
+          left: -35px;
+        }
+      }
+    }
+  }
+}
+
+//навбар:
+.uk-navbar {
+  background: #191919;
+  height: auto;
+  .uk-navbar-nav {
+    &>li {
+      a {
+        color: white;
+        font-size: 18px;
+        height: auto;
+        padding: 20px 30px;
+      }
+      &.uk-active>a,
+      &.uk-open>a,
+      &:hover>a,
+      &>a:focus {
+        background: $color-light;
+        color: black;
+      }
+      & + li {
+        border-left: #393939 solid 1px;
+      }
+    }
+  }
+}
+//навбар (состочние стики):
+.uk-navbar.uk-active {
+  .uk-navbar-nav {
+    float: none;
+    text-align: center;
+    & > li {
+      float: none;
+      display: inline-block;
+      a {
+        padding: 5px 30px;
+      }
+      & + li {
+        border-left: none;
+      }
+    }
+  }
+}
+//кнопка вызова оффканваса:
+.uk-navbar-toggle {
+  color: white;
+}
+.uk-sticky-placeholder {
+  height: auto;
+}
+
+/*НАЧАЛО модальное окно*/
+#modal-article {
+  text-align: justify;
+  .uk-modal-dialog {
+    background: rgba(255, 255, 255, 0.85);
+    color: #191919;
+    h2 {
+      color: #191919;
+      text-align: center;
+    }
+    p {
+      text-indent: 20px;
+    }
+    img {
+      border: 3px solid $color-dark;
+      margin-bottom: 5px;
+      width: 100%;
+      @media (min-width: 767px) {
+        width: auto;
+        max-width: 400px;
+      }
+    }
+    img.float-right-img {
+      float: right;
+      margin-left: 15px;
+    }
+    img.float-left-img {
+      float: left;
+      margin-right: 15px;
+    }
+  }
+}
+/*КОНЕЦ модальное окно*/
+
+/* НАЧАЛО главный раздел */
+.main {
+  background: linear-gradient(to bottom,
+                  rgba(0,0,0,.75) 0%,
+                  rgba(0,0,0,.75) 100%
+              ),
+              50% 50%/100% auto url("../img/home_background.jpg");
+  font-size: 32px;
+  padding: 5% 0 5% 0;
+  @media screen and (min-width: 768px) {
+    background: linear-gradient(115deg,
+            rgba(0,0,0,0) 0%,
+            rgba(0,0,0,0) 40%,
+            rgba(0,0,0,.75) 40%,
+            rgba(0,0,0,.75) 100%
+    ),
+    50% 50%/100% auto url("../img/home_background.jpg");
+    padding: 12% 0 12% 50%;
+  }
+  p {
+    display: block;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+      text-align: left;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
+/* КОНЕЦ главный раздел */
+
+/* НАЧАЛО услуги */
+.services {
+  background: $color-light;
+  padding: 35px 0 50px;
+  font-size: 24px;
+  @media screen and (min-width: 768px) {
+    background: linear-gradient(115deg,
+            rgb(19, 19, 19) 0%,
+            rgb(19, 19, 19) 60%,
+            $color-light 60%,
+            $color-light 100%
+    );
+  }
+  li>a {
+    display: block;
+  }
+  img {
+    width: 100%;
+  }
+  span {
+    text-shadow: 1px 1px 5px black,
+    -1px -1px 5px black;
+  }
+  span:last-child {
+    color: $color-light;
+  }
+  .service-name {
+    position: relative;
+    &:after {
+      content: "\f105";
+      position: absolute;
+      color: $color-dark;
+      right: 0;
+      bottom: 0;
+      font-family: FontAwesome, sans-serif;
+      font-size: 56px;
+    }
+  }
+}
+/* КОНЕЦ услуги */
+
+/* НАЧАЛО О нас */
+.about {
+  background: #e5e5e5;
+  color: #6c5d64;
+  h2 {
+    font-size: 24px;
+    color: #191919;
+    margin: 25px 0 0;
+    text-align: center;
+    @media screen and (min-width: 768px){
+      text-align: left;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  .text-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+  .staff-photo {
+    display: none;
+    @media screen and (min-width: 768px){
+      align-items: flex-end;
+      display: flex;
+    }
+  }
+}
+/* КОНЕЦ О нас */
+
+/* НАЧАЛО редкие авто */
+.retro-cars {
+  background: linear-gradient(to bottom,
+          rgba(8,23,35,.67) 0%,
+          rgba(8,23,35,.67) 100%
+  ),
+  50% 50%/100% auto url("../img/old_cars_background.jpg");
+  font-size: 32px;
+  padding: 5% 0 5% 0;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    background: linear-gradient(105deg,
+            rgba(0,0,0,0) 0%,
+            rgba(0,0,0,0) 55%,
+            rgba(8,23,35,.67) 50%,
+            rgba(8,23,35,.67) 100%
+    ),
+    50% 50%/100% auto url("../img/old_cars_background.jpg");
+    padding: 10% 0 10% 60%;
+    text-align: left;
+  }
+  p {
+    display: block;
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  a.read-more {
+    display: inline-block;
+    color: #191919;
+    font-size: 18px;
+    background: $color-light;
+    padding: 10px 30px;
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+      padding: 20px 50px;
+    }
+    &:hover {
+      color: white;
+      padding: 20px 50px;
+      background: #c99c00;
+    }
+  }
+}
+/* КОНЕЦ редкие авто */
+
+/* НАЧАЛО вместо пневмы */
+.instead-of-pneuma {
+  background: linear-gradient(to bottom,
+          rgba(8,23,35,.67) 0%,
+          rgba(8,23,35,.67) 100%
+  ),
+  50% 50%/100% auto url("../img/pneuma_background.jpg");
+  font-size: 32px;
+  padding: 5% 0 5% 0;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    background: linear-gradient(105deg,
+            rgba(8,23,35,.67) 0%,
+            rgba(8,23,35,.67) 50%,
+            rgba(0,0,0,.0) 50%,
+            rgba(0,0,0,.0) 100%
+    ),
+    50% 50%/100% auto url("../img/pneuma_background.jpg");
+    padding: 10% 0 10% 10%;
+    text-align: left;
+  }
+  p {
+    display: block;
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  a.read-more {
+    display: inline-block;
+    color: #191919;
+    font-size: 18px;
+    background: $color-light;
+    padding: 10px 30px;
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+      padding: 20px 50px;
+    }
+    &:hover {
+      color: white;
+      padding: 20px 50px;
+      background: #c99c00;
+    }
+  }
+}
+/* КОНЕЦ вместо пневмы */
+
+footer {
+  position: relative;
+  div.text-section-container {
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    background: rgb(19,19,19);
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+      padding: 2% 0 5% 15%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 40%;
+      background: linear-gradient(115deg,
+              rgb(19,19,19) 0%,
+              rgb(19,19,19) 85%,
+              rgba(0,0,0,0) 85%,
+              rgba(0,0,0,0) 100%
+      );
+      text-align: left;
+    }
+    .text-section {
+      h2 {
+        color: white;
+      }
+      &>p {
+        position: relative;
+        &::before {
+          position: absolute;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        p + p {
+          margin-top: 35px;
+        }
+        .address::before {
+          content: url("../img/footer_pin.png");
+          left: -60px;
+          top: -25px;
+        }
+        .phone-numbers::before {
+          content: url("../img/footer_cellphone.png");
+          left: -55px;
+          top: -15px;
+        }
+        .email::before {
+          content: url("../img/footer_mail.png");
+          left: -70px;
+          top: -10px;
+        }
+      }
+    }
+  }
+}

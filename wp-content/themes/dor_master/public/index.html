@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DorMaster</title>
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="css/components/sticky.min.css">
+    <link rel="stylesheet" href="css/components/slider.min.css">
+    <link rel="stylesheet" href="css/components/slideshow.css">
+    <link rel="stylesheet" href="css/components/slidenav.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--НАЧАЛО main section-->
+    <header id="home">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-medium-1-2">
+                    <a class="logo">
+                        <span class="text-yellow">СТО</span> <br>
+                        <span class="company-name">DorMaster</span> <br>
+                        <span class="text-yellow">РЕМОНТ АМОРТИЗАТОРОВ</span>
+                    </a>
+                </div>
+                <div class="uk-width-medium-1-2 phone-numbers">
+                    <p>
+                        Нужна помощь? Звони! <br>
+                        <a class="text-yellow" href="tel:+7 747 807 80 30">+7 747 807 80 30</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--КОНЕЦ main section-->
+
+    <nav class="uk-navbar" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}">
+        <div class="uk-container uk-container-center">
+            <ul class="uk-navbar-nav uk-hidden-small uk-navbar-attached" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
+                <li><a href="#home" data-uk-smooth-scroll>Начало</a></li>
+                <li><a href="#services" data-uk-smooth-scroll="{offset: 65}">Услуги</a></li>
+                <li><a href="#about" data-uk-smooth-scroll="{offset: 75}">О нас</a></li>
+                <li><a href="#footer" data-uk-smooth-scroll>Контакты</a></li>
+            </ul>
+            <a href="#sidebar-menu" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas="{target:'#sidebar-menu'}"></a>
+        </div>
+    </nav>
+    <div id="sidebar-menu" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar">
+            <ul class="uk-nav uk-nav-offcanvas" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}" data-uk-nav>
+                <li><a href="#home" data-uk-smooth-scroll>Начало</a></li>
+                <li><a href="#services" data-uk-smooth-scroll="{offset: 65}">Услуги</a></li>
+                <li><a href="#about" data-uk-smooth-scroll="{offset: 75}">О нас</a></li>
+                <li><a href="#footer" data-uk-smooth-scroll>Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!--НАЧАЛО main-->
+    <div class="main">
+        <div class="uk-container uk-container-center">
+            <p>
+                <span>
+                    НАШИ АМОРТИЗАТОРЫ <br>
+                    БУДУТ ЛУЧШЕ, ЧЕМ НОВЫЕ! <br>
+                </span>
+                МНОГОРАЗОВЫЕ, РАЗБОРНЫЕ!
+            </p>
+        </div>
+    </div>
+    <!--КОНЕЦ main-->
+
+    <!--НАЧАЛО отзывы-->
+    <div class="services" id="services">
+        <div class="uk-container uk-container-center">
+            <div class="uk-slidenav-position" data-uk-slider="{autoplay:true, pauseOnHover:true, autoplayInterval:5000}">
+                <div class="uk-slider-container">
+                    <ul class="uk-slider uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid">
+                        <li>
+                            <a href="#modal-article" data-uk-modal>
+                                <img src="img/services_amt.jpg">
+                                <p class="service-name">
+                                    <span>РЕМОНТ</span> <br>
+                                    <span>АМОРТИЗАТОРОВ</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#modal-article" data-uk-modal>
+                                <img src="img/services_rulevaya_reika.jpg">
+                                <p class="service-name">
+                                    <span>РУЛЕВЫЕ</span> <br>
+                                    <span>РЕЙКИ</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#modal-article" data-uk-modal>
+                                <img src="img/services_tokar.jpg">
+                                <p class="service-name">
+                                    <span>ТОКАРНЫЕ</span> <br>
+                                    <span>РАБОТЫ</span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous"></a>
+                <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next"></a>
+            </div>
+        </div>
+    </div>
+    <!--КОНЕЦ отзывы-->
+
+    <!--НАЧАЛО about-->
+    <div class="about" id="about">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-medium-6-10 text-section">
+                    <h2>НЕМНОГО <br><span>О ДОРМАСТЕРЕ</span></h2>
+                    <p>
+                        Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                        laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cum doloribus
+                        minima natus nemo perspiciatis quidem quo, repellendus. Amet aspernatur doloremque ducimus eum
+                        explicabo fugit harum incidunt laboriosam, repudiandae vel?
+                    </p>
+                    <p>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cum
+                        doloribus minima natus nemo perspiciatis quidem quo, repellendus.
+                    </p>
+                </div>
+                <div class="uk-width-medium-4-10 staff-photo">
+                    <img src="img/about_man.png" alt="О нас">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--КОНЕЦ about-->
+
+    <!--НАЧАЛО retro-cars-->
+    <div class="retro-cars">
+        <div class="uk-container uk-container-center">
+            <p>
+                ИГОТОВЛЕНИЕ <br>
+                АМОРТИЗАТОРОВ <br>
+                <span>
+                    ДЛЯ РЕДКИХ <br>
+                    АВТОМОБИЛЕЙ
+                </span>
+            </p> <br>
+            <a href="#modal-article" class="read-more" data-uk-modal>Подробнее</a>
+        </div>
+    </div>
+    <!--КОНЕЦ retro-cars-->
+
+    <!--НАЧАЛО вместо пневмы-->
+    <div class="instead-of-pneuma">
+        <div class="uk-container uk-container-center">
+            <p>
+                ИГОТОВЛЕНИЕ <br>
+                ПРУЖИННЫХ АМОРТИЗАТОРОВ <br>
+                <span>
+                    ВМЕСТО <br>
+                    ПНЕВМОАМОРТИЗАТОРОВ <br>
+                    ДЛЯ ВСЕХ МОДЕЛЕЙ
+                </span>
+            </p> <br>
+            <a href="#modal-article" class="read-more" data-uk-modal>Подробнее</a>
+        </div>
+    </div>
+    <!--КОНЕЦ вместо пневмы-->
+
+    <!--НАЧАЛО контакты/футер-->
+    <footer id="footer">
+
+        <!--НАЧАЛО картя яндекса-->
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=F_jGVssD3Nej5f44hcGvc7AVjqMa_9Bv&width=100%&height=290&lang=ru_RU&sourceType=constructor"></script>
+        <!--КОНЕЦ картя яндекса-->
+
+        <div class="text-section-container">
+            <div class="text-section">
+                <h2>КОНТАКТЫ</h2>
+                <p class="address">Адрес: г. Алматы, пр. Райымбека 496</p>
+                <p class="phone-numbers">Телефон: <a href="tel:+7 747 807 8030">+7 747 807 8030</a></p>
+                <p class="email">E-mail: <a href="mailto:adm77@bk.ru">adm77@bk.ru</a></p>
+            </div>
+        </div>
+
+    </footer>
+    <!--КОНЕЦ контакты/футер-->
+
+    <!--НАЧАЛО модальное окно статьи-->
+    <div id="modal-article" data-uk-modal="{center:true}" class="uk-modal">
+        <div class="uk-modal-dialog uk-modal-dialog-large uk-clearfix">
+            <a class="uk-modal-close uk-close"></a>
+            <h2>Название статьи</h2>
+            <img src="img/services_amt.jpg" class="float-right-img">
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa minus nobis quibusdam recusandae. Aliquid est exercitationem nostrum nulla tempore! Cumque cupiditate deserunt eaque est, incidunt iure necessitatibus nemo nulla omnis perferendis perspiciatis quaerat repudiandae totam vel velit vero voluptate! Alias aliquid autem, beatae culpa illo magnam modi neque sed sequi voluptas voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa doloribus non obcaecati porro sequi similique sint veniam! </p>
+            <p> Accusantium explicabo harum iste mollitia non odio saepe? Amet, cumque deserunt doloribus eveniet exercitationem maiores molestias necessitatibus, nesciunt nobis placeat, porro quod sint voluptate. Fugit, magnam, veritatis? Illum necessitatibus obcaecati omnis possimus veniam. Ad adipisci aut culpa cumque cupiditate dolore doloremque dolores ducimus, eaque enim error esse exercitationem incidunt maxime minus natus nobis non obcaecati odio odit omnis quia quo rem reprehenderit repudiandae sed sit tempore tenetur velit voluptatum! Cumque cupiditate deserunt eaque est, incidunt iure necessitatibus nemo nulla omnis perferendis perspiciatis quaerat repudiandae totam vel velit vero voluptate! Alias aliquid autem, beatae culpa illo magnam modi neque sed sequi voluptas voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut culpa cumque cupiditate dolore doloremque dolores ducimus, eaque enim error esse exercitationem incidunt maxime minus natus nobis non obcaecati odio odit omnis quia quo rem reprehenderit repudiandae sed sit tempore tenetur velit voluptatum!</p>
+            <p>Culpa doloribus non obcaecati porro sequi similique sint veniam! Accusantium explicabo harum iste mollitia non odio saepe? Amet, cumque deserunt doloribus eveniet exercitationem maiores molestias necessitatibus, nesciunt nobis placeat, porro quod sint voluptate. Fugit, magnam, veritatis? Illum necessitatibus obcaecati omnis possimus veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad aperiam asperiores at atque commodi consequatur cumque error id laboriosam, minima natus necessitatibus non numquam praesentium rem unde velit veniam?</p>
+            </div>
+        </div>
+    </div>
+    <!--КОНЕЦ модальное окно статьи-->
+
+
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/components/sticky.min.js"></script>
+    <script src="js/components/slider.min.js"></script>
+    <script src="js/components/slideshow.min.js"></script>
+</body>
+</html>

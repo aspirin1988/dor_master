@@ -1,0 +1,330 @@
+@charset "UTF-8";
+/* НАЧАЛО ОБЩИЕ СТИЛИ */
+@font-face {
+  font-family: 'Poplar Std';
+  src: url("../fonts/poplar_std/Poplar-Std-Black.ttf") format("truetype");
+  font-weight: normal; }
+@font-face {
+  font-family: 'Agora sans';
+  src: url("../fonts/agora_sans/PFAgoraSansPro-Medium.ttf") format("truetype");
+  font-weight: normal; }
+@font-face {
+  font-family: 'Agora sans';
+  src: url("../fonts/agora_sans/PFAgoraSansPro-Bold.ttf") format("truetype");
+  font-weight: bold; }
+body {
+  color: white;
+  font-family: "Agora sans", Helvetica, Arial, sans-serif;
+  line-height: 1.2;
+  font-size: 16px; }
+
+a {
+  color: inherit; }
+  a:hover {
+    color: inherit;
+    text-decoration: none; }
+
+.text-yellow {
+  color: #f6d80d; }
+
+.uk-slidenav {
+  color: #268131;
+  display: inline-block !important; }
+  .uk-slidenav:hover, .uk-slidenav:active {
+    color: #268131; }
+  .uk-slidenav.uk-slidenav-next {
+    text-shadow: -1px 0 white; }
+  .uk-slidenav.uk-slidenav-previous {
+    text-shadow: 1px 0 white; }
+
+/* КОНЕЦ ОБЩИЕ СТИЛИ */
+header {
+  background: #268131;
+  font-size: 20px;
+  padding: 10px 0 30px;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    header {
+      font-size: 24px;
+      text-align: left; } }
+  header a.logo {
+    display: block;
+    font-weight: bold; }
+    header a.logo .company-name {
+      line-height: 1;
+      font-size: 60px;
+      font-family: "Poplar Std", Arial, sans-serif; }
+      @media screen and (min-width: 480px) {
+        header a.logo .company-name {
+          font-size: 80px; } }
+    header a.logo span:last-child {
+      margin-top: -5px;
+      display: block;
+      font-size: 20px; }
+  header .phone-numbers {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15px; }
+    @media screen and (min-width: 768px) {
+      header .phone-numbers {
+        text-align: right;
+        margin-top: 0; } }
+    header .phone-numbers a {
+      font-size: 28px;
+      font-weight: bold;
+      position: relative; }
+      @media screen and (min-width: 480px) {
+        header .phone-numbers a {
+          font-size: 32px; } }
+      @media screen and (min-width: 768px) {
+        header .phone-numbers a::before {
+          content: url("../img/icon_cellphone.png");
+          display: inline-block;
+          position: absolute;
+          top: -15px;
+          left: -35px; } }
+
+.uk-navbar {
+  background: #191919;
+  height: auto; }
+  .uk-navbar .uk-navbar-nav > li a {
+    color: white;
+    font-size: 18px;
+    height: auto;
+    padding: 20px 30px; }
+  .uk-navbar .uk-navbar-nav > li.uk-active > a, .uk-navbar .uk-navbar-nav > li.uk-open > a, .uk-navbar .uk-navbar-nav > li:hover > a, .uk-navbar .uk-navbar-nav > li > a:focus {
+    background: #f6d80d;
+    color: black; }
+  .uk-navbar .uk-navbar-nav > li + li {
+    border-left: #393939 solid 1px; }
+
+.uk-navbar.uk-active .uk-navbar-nav {
+  float: none;
+  text-align: center; }
+  .uk-navbar.uk-active .uk-navbar-nav > li {
+    float: none;
+    display: inline-block; }
+    .uk-navbar.uk-active .uk-navbar-nav > li a {
+      padding: 5px 30px; }
+    .uk-navbar.uk-active .uk-navbar-nav > li + li {
+      border-left: none; }
+
+.uk-navbar-toggle {
+  color: white; }
+
+.uk-sticky-placeholder {
+  height: auto; }
+
+/*НАЧАЛО модальное окно*/
+#modal-article {
+  text-align: justify; }
+  #modal-article .uk-modal-dialog {
+    background: rgba(255, 255, 255, 0.85);
+    color: #191919; }
+    #modal-article .uk-modal-dialog h2 {
+      color: #191919;
+      text-align: center; }
+    #modal-article .uk-modal-dialog p {
+      text-indent: 20px; }
+    #modal-article .uk-modal-dialog img {
+      border: 3px solid #268131;
+      margin-bottom: 5px;
+      width: 100%; }
+      @media (min-width: 767px) {
+        #modal-article .uk-modal-dialog img {
+          width: auto;
+          max-width: 400px; } }
+    #modal-article .uk-modal-dialog img.float-right-img {
+      float: right;
+      margin-left: 15px; }
+    #modal-article .uk-modal-dialog img.float-left-img {
+      float: left;
+      margin-right: 15px; }
+
+/*КОНЕЦ модальное окно*/
+/* НАЧАЛО главный раздел */
+.main {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), 50% 50%/100% auto url("../img/home_background.jpg");
+  font-size: 32px;
+  padding: 5% 0 5% 0; }
+  @media screen and (min-width: 768px) {
+    .main {
+      background: linear-gradient(115deg, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 0.75) 100%), 50% 50%/100% auto url("../img/home_background.jpg");
+      padding: 12% 0 12% 50%; } }
+  .main p {
+    display: block;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .main p {
+        display: inline-block;
+        text-align: left; } }
+    .main p span {
+      font-weight: bold; }
+
+/* КОНЕЦ главный раздел */
+/* НАЧАЛО услуги */
+.services {
+  background: #f6d80d;
+  padding: 35px 0 50px;
+  font-size: 24px; }
+  @media screen and (min-width: 768px) {
+    .services {
+      background: linear-gradient(115deg, #131313 0%, #131313 60%, #f6d80d 60%, #f6d80d 100%); } }
+  .services li > a {
+    display: block; }
+  .services img {
+    width: 100%; }
+  .services span {
+    text-shadow: 1px 1px 5px black, -1px -1px 5px black; }
+  .services span:last-child {
+    color: #f6d80d; }
+  .services .service-name {
+    position: relative; }
+    .services .service-name:after {
+      content: "\f105";
+      position: absolute;
+      color: #268131;
+      right: 0;
+      bottom: 0;
+      font-family: FontAwesome, sans-serif;
+      font-size: 56px; }
+
+/* КОНЕЦ услуги */
+/* НАЧАЛО О нас */
+.about {
+  background: #e5e5e5;
+  color: #6c5d64; }
+  .about h2 {
+    font-size: 24px;
+    color: #191919;
+    margin: 25px 0 0;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .about h2 {
+        text-align: left; } }
+    .about h2 span {
+      font-weight: bold; }
+  .about .text-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-bottom: 15px; }
+  .about .staff-photo {
+    display: none; }
+    @media screen and (min-width: 768px) {
+      .about .staff-photo {
+        align-items: flex-end;
+        display: flex; } }
+
+/* КОНЕЦ О нас */
+/* НАЧАЛО редкие авто */
+.retro-cars {
+  background: linear-gradient(to bottom, rgba(8, 23, 35, 0.67) 0%, rgba(8, 23, 35, 0.67) 100%), 50% 50%/100% auto url("../img/old_cars_background.jpg");
+  font-size: 32px;
+  padding: 5% 0 5% 0;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .retro-cars {
+      background: linear-gradient(105deg, transparent 0%, transparent 55%, rgba(8, 23, 35, 0.67) 50%, rgba(8, 23, 35, 0.67) 100%), 50% 50%/100% auto url("../img/old_cars_background.jpg");
+      padding: 10% 0 10% 60%;
+      text-align: left; } }
+  .retro-cars p {
+    display: block; }
+    @media screen and (min-width: 768px) {
+      .retro-cars p {
+        display: inline-block; } }
+    .retro-cars p span {
+      font-weight: bold; }
+  .retro-cars a.read-more {
+    display: inline-block;
+    color: #191919;
+    font-size: 18px;
+    background: #f6d80d;
+    padding: 10px 30px;
+    margin: 0 auto; }
+    @media screen and (min-width: 768px) {
+      .retro-cars a.read-more {
+        padding: 20px 50px; } }
+    .retro-cars a.read-more:hover {
+      color: white;
+      padding: 20px 50px;
+      background: #c99c00; }
+
+/* КОНЕЦ редкие авто */
+/* НАЧАЛО вместо пневмы */
+.instead-of-pneuma {
+  background: linear-gradient(to bottom, rgba(8, 23, 35, 0.67) 0%, rgba(8, 23, 35, 0.67) 100%), 50% 50%/100% auto url("../img/pneuma_background.jpg");
+  font-size: 32px;
+  padding: 5% 0 5% 0;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .instead-of-pneuma {
+      background: linear-gradient(105deg, rgba(8, 23, 35, 0.67) 0%, rgba(8, 23, 35, 0.67) 50%, transparent 50%, transparent 100%), 50% 50%/100% auto url("../img/pneuma_background.jpg");
+      padding: 10% 0 10% 10%;
+      text-align: left; } }
+  .instead-of-pneuma p {
+    display: block; }
+    @media screen and (min-width: 768px) {
+      .instead-of-pneuma p {
+        display: inline-block; } }
+    .instead-of-pneuma p span {
+      font-weight: bold; }
+  .instead-of-pneuma a.read-more {
+    display: inline-block;
+    color: #191919;
+    font-size: 18px;
+    background: #f6d80d;
+    padding: 10px 30px;
+    margin: 0 auto; }
+    @media screen and (min-width: 768px) {
+      .instead-of-pneuma a.read-more {
+        padding: 20px 50px; } }
+    .instead-of-pneuma a.read-more:hover {
+      color: white;
+      padding: 20px 50px;
+      background: #c99c00; }
+
+/* КОНЕЦ вместо пневмы */
+footer {
+  position: relative; }
+  footer div.text-section-container {
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    background: #131313; }
+    @media screen and (min-width: 768px) {
+      footer div.text-section-container {
+        font-size: 24px;
+        padding: 2% 0 5% 15%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 40%;
+        background: linear-gradient(115deg, #131313 0%, #131313 85%, transparent 85%, transparent 100%);
+        text-align: left; } }
+    footer div.text-section-container .text-section h2 {
+      color: white; }
+    footer div.text-section-container .text-section > p {
+      position: relative; }
+      footer div.text-section-container .text-section > p::before {
+        position: absolute; }
+    @media screen and (min-width: 768px) {
+      footer div.text-section-container .text-section p + p {
+        margin-top: 35px; }
+      footer div.text-section-container .text-section .address::before {
+        content: url("../img/footer_pin.png");
+        left: -60px;
+        top: -25px; }
+      footer div.text-section-container .text-section .phone-numbers::before {
+        content: url("../img/footer_cellphone.png");
+        left: -55px;
+        top: -15px; }
+      footer div.text-section-container .text-section .email::before {
+        content: url("../img/footer_mail.png");
+        left: -70px;
+        top: -10px; } }
+
+/*# sourceMappingURL=styles.css.map */
