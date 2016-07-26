@@ -79,7 +79,6 @@
 	</div>
 	<?php wp_reset_query(); ?>
 	<!--КОНЕЦ retro-cars-->
-
 	<!--НАЧАЛО вместо пневмы-->
 	<?php $post=get_post(42); setup_postdata($post);?>
 	<div class="instead-of-pneuma" style="background: linear-gradient(105deg, rgba(8, 23, 35, 0.67) 0%, rgba(8, 23, 35, 0.67) 50%, transparent 50%, transparent 100%), 50% 50%/100% auto url('<?=get_the_post_thumbnail_url()?>');">

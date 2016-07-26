@@ -20,17 +20,17 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'dor_master');
+define('DB_NAME', 'dormaste_database');
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'dorma_user');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'Myxn397^');
 //DorAdmin
 //MI%!aSskZ5uylx0eUr
 /** Имя сервера MySQL */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'srv-pleskdb15.ps.kz:3306');
 
 /** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8');
